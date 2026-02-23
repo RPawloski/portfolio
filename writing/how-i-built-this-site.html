@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I Built This Site (Including the Part Where It Went Down) — Ryan Pawloski</title>
+  <meta name="description" content="From deciding I wanted a portfolio to watching it go live — and then briefly go dark. What actually happens when you deploy a website for the first time.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">Ryan Pawloski</a>
+      <ul class="nav-links">
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+          <line x1="3" y1="6" x2="17" y2="6"/>
+          <line x1="3" y1="10" x2="17" y2="10"/>
+          <line x1="3" y1="14" x2="17" y2="14"/>
+        </svg>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="../projects.html">Projects</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- Article -->
+  <section style="border-top: none; padding-top: 4rem;">
+    <div class="container">
+      <div class="prose reading">
+
+        <a href="../writing.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3L5 8l5 5"/>
+          </svg>
+          All Writing
+        </a>
+
+        <h1>How I Built This Site (Including the Part Where It Went Down)</h1>
+
+        <div class="prose-meta">
+          <span>February 22, 2026</span>
+          <span>·</span>
+          <span>5 min read</span>
+        </div>
+
+        <div class="prose-body">
+          <p>
+            Earlier today I decided I wanted a portfolio website. By tonight, ryanpawloski.com
+            was live. The gap between those two sentences contains a lot of things that no
+            tutorial fully prepares you for — including a twenty-minute window where the site
+            appeared to be completely dead.
+          </p>
+
+          <p>
+            I want to write about it while it's fresh, because I think the honest version
+            of "I deployed a website" is more useful than the cleaned-up version.
+          </p>
+
+          <h2>The build itself</h2>
+
+          <p>
+            The site is pure HTML, CSS, and JavaScript. No framework, no build step,
+            no npm install. Four pages: home, projects, writing, about. One stylesheet.
+            One script file. The kind of thing you can understand completely because
+            there's nothing hidden underneath.
+          </p>
+
+          <p>
+            I built it in collaboration with Claude over the course of an afternoon.
+            I knew what I wanted — clean, minimal, something that felt like a person
+            rather than a template — and we iterated from there. I made decisions
+            about what to show and what to leave out. The AI handled the implementation.
+            I reviewed everything, caught a few things that were wrong, and learned
+            from what I was seeing.
+          </p>
+
+          <p>
+            This is a workflow I've gotten comfortable with. I'm not a developer
+            and I'm not pretending to be. But I understand enough of what's being
+            built to have opinions, ask the right questions, and actually learn
+            from the process rather than just receiving output.
+          </p>
+
+          <h2>The deployment part nobody really explains</h2>
+
+          <p>
+            I had a domain sitting on Bluehost that I'd bought two years ago and never
+            used. The plan was: host the site on Netlify — which is free for exactly
+            this kind of static site — and point the domain at it.
+          </p>
+
+          <p>
+            What I didn't fully understand going in is that a domain and a website are
+            two separate things. The domain is a name. The website is files on a server.
+            The connection between them — the thing that says "when someone types
+            ryanpawloski.com, send them to these particular files on this particular
+            server" — is DNS. And DNS is managed by a third party called a nameserver,
+            which you can change.
+          </p>
+
+          <p>
+            I changed Bluehost's nameservers to Netlify's. This is the move that
+            hands control of your domain's DNS over to Netlify, which lets Netlify
+            automatically handle pointing your domain to your site and issuing
+            an SSL certificate so the connection is secure.
+          </p>
+
+          <p>
+            Simple in concept. Slightly nerve-wracking in practice, because once
+            you do it, nothing happens immediately.
+          </p>
+
+          <h2>Propagation, or: why the internet is slow</h2>
+
+          <p>
+            DNS changes don't go live instantly. They "propagate" — meaning different
+            DNS servers around the world learn about the change at different speeds.
+            Your ISP's DNS servers might update in an hour. Your phone carrier's might
+            take longer. There's no progress bar. You just wait and periodically
+            reload a page and see what happens.
+          </p>
+
+          <p>
+            Here's the timeline from my afternoon:
+          </p>
+
+          <p>
+            An hour after the nameserver change, my desktop was showing the live site.
+            My phone was still showing the Bluehost placeholder page. My phone in
+            incognito mode — which bypasses the browser's cached DNS — gave me
+            a "connection refused" error, which looked alarming but just meant
+            the DNS had partially updated to point at Netlify but the SSL certificate
+            hadn't finished provisioning yet.
+          </p>
+
+          <p>
+            Then, for about twenty minutes, the site went completely dark. Desktop,
+            phone, everything. Gone. I had a brief moment of genuine panic before
+            remembering that this is also a known thing: the old DNS records expire,
+            the new ones haven't propagated everywhere yet, and there's a gap. The
+            site was never broken. It was just in transit.
+          </p>
+
+          <p>
+            It came back on its own. It always does.
+          </p>
+
+          <h2>What "live" actually feels like</h2>
+
+          <p>
+            There's something strange about seeing a URL you own resolve to something
+            you built. Logically I know it's HTML files on a server. I know how
+            it works. But there's still a moment when you type your own name into
+            a browser and your face — or in my case, my initials in a placeholder
+            avatar — loads on the screen, and something about it lands differently
+            than you expected.
+          </p>
+
+          <p>
+            I've been using the internet my entire life. This is the first time
+            I've put something on it that's actually mine. Not a profile on
+            someone else's platform, not a post inside someone else's system —
+            something I built, at a domain I control, that works because I
+            made it work.
+          </p>
+
+          <p>
+            I wasn't prepared for how good that would feel.
+          </p>
+
+          <h2>The part worth thinking about</h2>
+
+          <p>
+            Six months ago I was a physical therapist whose relationship with technology
+            was purely as a consumer. I used apps. I complained when software didn't work.
+            I had no framework for understanding how any of it was made.
+          </p>
+
+          <p>
+            Now I have a live website with a custom domain. The gap between those two
+            states is smaller than I thought — not because it's easy, but because
+            you can close it incrementally. One working thing at a time.
+          </p>
+
+          <p>
+            The first working thing was an HTML file that called an AI API and turned
+            my clinical shorthand into a documentation draft. Then it was four tabs
+            with different note types and their own system prompts. Then it was this —
+            a website, live, at a real URL.
+          </p>
+
+          <p>
+            I still have no idea what half the CSS is doing. I couldn't rebuild this
+            from scratch without help. But I understand it well enough to own it,
+            change it, and keep building on it.
+          </p>
+
+          <p>
+            That turns out to be enough.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 Ryan Pawloski</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="../about.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

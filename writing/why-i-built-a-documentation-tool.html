@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why I Built a Documentation Tool Instead of Buying One — Ryan Pawloski</title>
+  <meta name="description" content="The problem with every existing solution, and what a single HTML file changed.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">Ryan Pawloski</a>
+      <ul class="nav-links">
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+          <line x1="3" y1="6" x2="17" y2="6"/>
+          <line x1="3" y1="10" x2="17" y2="10"/>
+          <line x1="3" y1="14" x2="17" y2="14"/>
+        </svg>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="../projects.html">Projects</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- Article -->
+  <section style="border-top: none; padding-top: 4rem;">
+    <div class="container">
+      <div class="prose reading">
+
+        <a href="../writing.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3L5 8l5 5"/>
+          </svg>
+          All Writing
+        </a>
+
+        <h1>Why I Built a Documentation Tool Instead of Buying One</h1>
+
+        <div class="prose-meta">
+          <span>February 22, 2026</span>
+          <span>·</span>
+          <span>6 min read</span>
+        </div>
+
+        <div class="prose-body">
+          <p>
+            Documentation kills clinicians. Not literally — but the 60 to 90-minute administrative
+            tail at the end of every clinical day absolutely eats the life out of the profession.
+            You go into physical therapy because you want to help people move better.
+            You stay late because Blue Cross needs three paragraphs of justification
+            that you already wrote last Tuesday for a different patient with the same diagnosis.
+          </p>
+
+          <p>
+            I've been a PT for long enough to have tried every solution on the market. None of them
+            solved the problem. Here's why, and what I did about it.
+          </p>
+
+          <h2>The solutions that didn't work</h2>
+
+          <p>
+            <strong>EMR templates.</strong> Every EMR has them. They're either so generic they
+            require more editing than starting from scratch, or so rigid that they don't match
+            how you actually practice. They also require clicking through approximately seventeen
+            dropdown menus to produce one paragraph. This is somehow considered a solution.
+          </p>
+
+          <p>
+            <strong>Dictation software.</strong> Dragon and its descendants are impressive technology
+            being used to solve the wrong problem. The issue isn't that typing is slow — it's that
+            translating clinical shorthand into insurance-compliant language takes cognitive effort
+            that accumulates across a ten-patient day. Dictating that effort doesn't eliminate it.
+          </p>
+
+          <p>
+            <strong>Third-party AI documentation tools.</strong> A wave of these appeared in the
+            last two years. Most require a subscription, an IT approval process, integration with
+            your EMR (which takes months), and a data sharing agreement that your compliance
+            department will sit on for six weeks. The ones that don't require all that are
+            either too generic or too expensive. None of them fit the specific way I write notes.
+          </p>
+
+          <h2>The thing I stumbled onto</h2>
+
+          <p>
+            I was reading about AI APIs — the interfaces that let you send text to a model and get
+            text back — when I noticed something. You can call these APIs directly from a web browser.
+            No server. No installation. No IT approval. Just a file that opens like any webpage,
+            sends a request to an AI, and gets a response back.
+          </p>
+
+          <p>
+            The architecture is almost embarrassingly simple:
+          </p>
+
+          <blockquote>
+            A form on a webpage → a few lines of JavaScript → a call to the Gemini API →
+            a generated note in the output box.
+          </blockquote>
+
+          <p>
+            I had no coding background. I knew what HTML was in the vague way that anyone who's
+            ever right-clicked a webpage knows what HTML is. I asked Claude to help me build it.
+            Within an afternoon, I had a working tool that I could open on my work laptop — a
+            locked-down machine where I can't install anything — just by double-clicking an HTML file.
+          </p>
+
+          <h2>What it actually changed</h2>
+
+          <p>
+            The first version was crude. One text box, one button, one output area. You pasted in
+            your clinical shorthand and it produced a paragraph. That was it.
+          </p>
+
+          <p>
+            It reduced my end-of-day documentation from about 90 minutes to about 15. Not because
+            the AI wrote perfect notes — it doesn't, and it shouldn't. You still need to review,
+            edit, and sign off on everything. But it eliminated the cognitive overhead of translation.
+            I jot down what happened in 30 seconds of shorthand. The AI produces a compliant draft.
+            I spend two minutes reviewing and adjusting. Done.
+          </p>
+
+          <p>
+            The version I use now is more sophisticated. It has four tabs — Daily Note, Progress Note,
+            Initial Evaluation, and Discharge — each with structured fields and its own system prompt.
+            It took a few weeks to build, in collaboration with an AI, learning along the way.
+          </p>
+
+          <h2>Why building it yourself matters</h2>
+
+          <p>
+            There's a version of this tool you can buy. Several of them, actually. But when you
+            build something yourself, even with significant AI assistance, you understand it in a
+            way you don't when you buy it. You can change it. You can fix it when it breaks.
+            You can add exactly the feature you need without submitting a support ticket.
+          </p>
+
+          <p>
+            More importantly: the skill of building it transfers. The same pattern — a form,
+            an API call, a response — applies to a prior authorization assistant, a patient
+            follow-up system, an outcomes tracker. Once you've done it once, the second one
+            is faster. The tenth one is almost automatic.
+          </p>
+
+          <p>
+            I'm a physical therapist. I am not, by any meaningful definition, a developer.
+            But I built a tool that I use every day, that saves me real time, and that no
+            vendor could have built for me because no vendor knows exactly how I practice.
+          </p>
+
+          <p>
+            That turns out to matter quite a lot.
+          </p>
+
+          <h2>What's next</h2>
+
+          <p>
+            I'm working on a Chrome extension version — a toolbar popup that generates the note
+            and copies it directly to clipboard, accessible from anywhere including inside the EMR.
+            After that, I want to explore agentic workflows: prior authorization drafting,
+            automated patient follow-up, outcome tracking that doesn't require me to build
+            a spreadsheet by hand.
+          </p>
+
+          <p>
+            I'm writing about all of it here. If any of this is useful to you — or if you're
+            a clinician who's been thinking about something similar — I'd like to hear from you.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 Ryan Pawloski</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="../about.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

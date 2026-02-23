@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Pawloski</title>
+  <meta name="description" content="Physical therapist and builder. Making tools that make care better.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Ryan Pawloski</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+          <line x1="3" y1="6" x2="17" y2="6"/>
+          <line x1="3" y1="10" x2="17" y2="10"/>
+          <line x1="3" y1="14" x2="17" y2="14"/>
+        </svg>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="projects.html">Projects</a>
+      <a href="writing.html">Writing</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" style="border-top: none;">
+    <div class="container">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        Physical Therapist & Builder
+      </div>
+      <h1>Ryan Pawloski</h1>
+      <p class="hero-sub">
+        I help people move better for a living. On the side, I'm learning to build the tools
+        that healthcare should have had years ago — and writing about what I find along the way.
+      </p>
+      <div class="hero-links">
+        <a href="projects.html" class="btn btn-primary">View Projects</a>
+        <a href="about.html" class="btn btn-outline">About Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">Featured Projects</span>
+        <a href="projects.html" class="section-link">View all →</a>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-name">PT Assessment Helper</span>
+            <span class="project-status status-live">Live</span>
+          </div>
+          <p class="project-desc">
+            A single HTML file that calls the Gemini API to generate clinical documentation.
+            No installation. No subscription. No IT approval required.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Gemini API</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-name">PT Assessment Helper v2</span>
+            <span class="project-status status-live">Live</span>
+          </div>
+          <p class="project-desc">
+            Expanded with four note types — Daily Note, Progress Note, Initial Evaluation,
+            and Discharge — each with their own fields, sections, and system prompt.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Gemini API</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-name">Daily Note Extension</span>
+            <span class="project-status status-progress">In Progress</span>
+          </div>
+          <p class="project-desc">
+            A Chrome extension that generates PT daily notes from a toolbar popup and
+            copies the result directly to clipboard. One click from anywhere — including inside the EMR.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Chrome Extension</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Gemini API</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Writing -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">Recent Writing</span>
+        <a href="writing.html" class="section-link">View all →</a>
+      </div>
+      <div class="post-list">
+
+        <a href="writing/how-i-built-this-site.html" class="post-item">
+          <div>
+            <div class="post-title">How I Built This Site (Including the Part Where It Went Down)</div>
+            <div class="post-desc">From deciding I wanted a portfolio to watching it go live — and then briefly go dark.</div>
+          </div>
+          <span class="post-meta">Feb 2026</span>
+        </a>
+
+        <a href="writing/why-i-built-a-documentation-tool.html" class="post-item">
+          <div>
+            <div class="post-title">Why I Built a Documentation Tool Instead of Buying One</div>
+            <div class="post-desc">The problem with every existing solution, and what a single HTML file changed.</div>
+          </div>
+          <span class="post-meta">Feb 2026</span>
+        </a>
+
+        <a href="#" class="post-item">
+          <div>
+            <div class="post-title">What 30 Days of Learning to Code Actually Feels Like</div>
+            <div class="post-desc">The tutorials, the wall, and why building something real changes everything.</div>
+          </div>
+          <span class="post-meta">Coming soon</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 Ryan Pawloski</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="about.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

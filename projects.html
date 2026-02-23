@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Ryan Pawloski</title>
+  <meta name="description" content="Things I've built at the intersection of physical therapy and technology.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Ryan Pawloski</a>
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+          <line x1="3" y1="6" x2="17" y2="6"/>
+          <line x1="3" y1="10" x2="17" y2="10"/>
+          <line x1="3" y1="14" x2="17" y2="14"/>
+        </svg>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="projects.html">Projects</a>
+      <a href="writing.html">Writing</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header" style="border-top: none;">
+    <div class="container">
+      <h1>Projects</h1>
+      <p>Things I've built at the intersection of physical therapy and technology. Most of these started as personal problems.</p>
+    </div>
+  </div>
+
+  <!-- AI Documentation Tools -->
+  <section style="border-top: 1px solid var(--border); padding-top: 3rem;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">AI Documentation Tools</span>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-name">PT Assessment Helper</span>
+            <span class="project-status status-live">Live</span>
+          </div>
+          <p class="project-desc">
+            A single HTML file that calls the Gemini API to generate clinical documentation.
+            No installation, no server, no IT approval required. Open it in any browser.
+            The entire tool — UI, API logic, and system prompt — lives in one file.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Gemini API</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-name">PT Assessment Helper v2</span>
+            <span class="project-status status-live">Live</span>
+          </div>
+          <p class="project-desc">
+            The expanded version. Four note types across tabbed navigation: Daily Note,
+            Progress Note, Initial Evaluation, and Discharge. Each tab has its own structured
+            input fields, section dividers, and AI system prompt. Built with a config-driven
+            architecture so adding new note types is just adding an object to an array.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Gemini API</span>
+          </div>
+          <span style="font-size:0.8125rem; color: var(--text-3); margin-top: 0.5rem;">
+            Features: tab persistence, dynamic field rendering, select + checkbox group field types
+          </span>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-name">Daily Note Chrome Extension</span>
+            <span class="project-status status-progress">In Progress</span>
+          </div>
+          <p class="project-desc">
+            A Chrome toolbar extension that brings the Daily Note form into a popup.
+            Fill in the fields, click Generate, and the note is automatically written
+            to the clipboard — ready to paste into any EMR without switching tabs.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Chrome Extension</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Gemini API</span>
+          </div>
+          <a href="#" class="project-link">View PRD ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Up -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">On the Horizon</span>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-name">PT Tool — React Rebuild</span>
+            <span class="project-status status-soon">Planned</span>
+          </div>
+          <p class="project-desc">
+            A proper deployed web app version of the PT Assessment Helper — built in React,
+            hosted on Vercel, with a backend to protect the API key and Supabase for note history.
+          </p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Supabase</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-name">Prior Auth Assistant</span>
+            <span class="project-status status-soon">Planned</span>
+          </div>
+          <p class="project-desc">
+            An agentic workflow that drafts insurance prior authorization letters based on
+            session documentation, patient history, and payer-specific criteria. The part of
+            PT that makes everyone want to quit — automated.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Agents</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">Gemini API</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-name">HEP Compliance Tracker</span>
+            <span class="project-status status-soon">Planned</span>
+          </div>
+          <p class="project-desc">
+            Automated patient follow-up between sessions — check-in texts, HEP completion
+            logging, and a morning dashboard summary for the therapist. Because the work
+            between sessions is where outcomes are actually made.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Agents</span>
+            <span class="tag">n8n</span>
+            <span class="tag">SMS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 Ryan Pawloski</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="about.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
