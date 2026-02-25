@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What I Shipped Today — Ryan Pawloski</title>
+  <meta name="description" content="A physical therapist who deployed tested software to a real domain, and what that actually felt like.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">Ryan Pawloski</a>
+      <ul class="nav-links">
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+          <line x1="3" y1="6" x2="17" y2="6"/>
+          <line x1="3" y1="10" x2="17" y2="10"/>
+          <line x1="3" y1="14" x2="17" y2="14"/>
+        </svg>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="../projects.html">Projects</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- Article -->
+  <section style="border-top: none; padding-top: 4rem;">
+    <div class="container">
+      <div class="prose reading">
+
+        <a href="../writing.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3L5 8l5 5"/>
+          </svg>
+          All Writing
+        </a>
+
+        <h1>What I Shipped Today</h1>
+
+        <div class="prose-meta">
+          <span>February 25, 2026</span>
+          <span>·</span>
+          <span>5 min read</span>
+        </div>
+
+        <div class="prose-body">
+          <p>
+            At some point today I stopped and thought about what I had actually done
+            in the last few hours. I'd written automated tests against a billing
+            algorithm to verify it matched CMS Medicare guidelines. I'd configured
+            DNS nameservers. I'd deployed a React application to a live domain I own.
+            I'd built a searchable PT note template library with clipboard copy
+            functionality.
+          </p>
+
+          <p>
+            I am a physical therapist. I have never worked in tech. I did all of this
+            in a single session.
+          </p>
+
+          <h2>What I actually built</h2>
+
+          <p>
+            The anchor is a Medicare 8-Minute Rule calculator — a tool for outpatient
+            therapy billing that handles the genuinely complex math involved: mixed
+            remainders, tied distributions, the separation of timed and untimed codes.
+            It's the kind of thing that already exists behind EMR paywalls and in
+            spreadsheets that get emailed around clinics. Now it exists as a clean,
+            tested, free tool at a URL anyone can visit.
+          </p>
+
+          <p>
+            The "tested" part matters more than I initially appreciated. Before today,
+            tests were an abstract concept — something real developers wrote for real
+            codebases. But billing math has consequences. A bug in this calculator
+            could cause a clinician to overbill or underbill Medicare without knowing
+            it. So we wrote 13 automated tests, one for each scenario in the CMS
+            manual, and we didn't ship until they all passed. That's not
+            perfectionism. That's the bare minimum for something that touches
+            compliance.
+          </p>
+
+          <p>
+            The rest of what I shipped is less critical but more personally useful.
+            A landing page for arcanarium.me — a hosting home for tools I build — with
+            a particle animation that I genuinely like looking at. And a note template
+            library for PT documentation, because our EMR is an open text field and I've
+            been copying the same ROM tables from old notes for years.
+          </p>
+
+          <h2>The tutor problem</h2>
+
+          <p>
+            I've tried to learn to code the normal way. Courses, tutorials, books that
+            promise to take you from zero to proficient in twelve weeks. I always hit
+            the same wall — not a comprehension wall, but a motivation wall. The lessons
+            made sense in isolation. The gap between understanding a concept and building
+            something real with it was enormous, and nothing in those curricula helped
+            me cross it.
+          </p>
+
+          <p>
+            What's different now is that I have a tutor who starts from wherever I am.
+            When I asked what a JSX file was today, I got a clear, jargon-free
+            explanation calibrated exactly to what I needed to understand to keep
+            moving. Not a documentation link. Not an explanation that assumed I knew
+            what a compiler was. Just the answer, in plain language, and then we
+            kept going.
+          </p>
+
+          <p>
+            The thing about working with Claude Code as a tutor — as opposed to a
+            tool that just generates code for you — is that the learning is continuous
+            and contextual. I asked questions when I was confused. I got explanations
+            when I asked for them. I got pushed back to the terminal to do things
+            myself when that was the right move. And none of it came with the
+            impatience that can make asking questions feel costly. There is no version
+            of this where I feel stupid for not already knowing something.
+          </p>
+
+          <p>
+            That last part is harder to quantify than I expected it to be. There is
+            something about the absence of social pressure in a learning environment
+            that changes what you're willing to try. I asked the same question twice
+            today in different ways because the first answer didn't fully land. I
+            wouldn't have done that in a classroom. I did it here because the cost
+            was zero and the answer got better.
+          </p>
+
+          <h2>What I actually understand now</h2>
+
+          <p>
+            Not everything I built today, not yet. But I understand the shape of it.
+            I know why you need Node.js and what it's doing. I know what a build step
+            is, what it produces, and why a deployed React app needs a specific config
+            file to make routing work on a static host. I know what DNS nameservers
+            are and why changing them hands control of a domain to a new provider.
+            These aren't things I could have told you this morning.
+          </p>
+
+          <p>
+            More importantly, I have a working mental model of how the pieces connect.
+            That's the thing courses never gave me — not the individual concepts, but
+            the architecture that makes them meaningful. Today I built something real,
+            and the understanding followed from that.
+          </p>
+
+          <h2>The obvious question</h2>
+
+          <p>
+            If AI is doing the heavy lifting, is there any real learning happening?
+          </p>
+
+          <p>
+            I keep returning to PT clinicals. The thing that made everything from
+            school finally stick wasn't the lectures — it was treating real patients,
+            where something was actually at stake, where the concepts had to work in
+            the real world or the patient didn't improve. Nobody framed hands-on
+            learning as a crutch. It was just how the knowledge became durable.
+          </p>
+
+          <p>
+            I don't think what I'm doing is different. The doing is still the learning.
+            The fact that I have a capable partner helping me do it doesn't change what
+            I'm building, what I'm understanding, or what I'll be able to do next time.
+            It just changes how quickly I can get to the part that matters.
+          </p>
+
+          <p>
+            I shipped software today. It's tested, it's live, and people can use it.
+            I understand more about how it works than I did when I started.
+            That's the whole thing.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 Ryan Pawloski</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="../about.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
